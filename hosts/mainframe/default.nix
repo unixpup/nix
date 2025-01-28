@@ -89,7 +89,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.unix = {
     isNormalUser = true;
-    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
+    extraGroups = ["users" "wheel" "video" "audio" "input"]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
       spotify
