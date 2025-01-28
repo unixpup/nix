@@ -13,7 +13,7 @@
     ...
   }: {
     nixosConfigurations = {
-      mainframe = nixpkgs.lib.nixosSystem {
+      hostname = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/mainframe/default.nix
