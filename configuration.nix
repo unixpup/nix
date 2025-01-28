@@ -65,6 +65,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.unix = {
      isNormalUser = true;
