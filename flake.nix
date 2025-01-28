@@ -20,7 +20,8 @@
         modules = [
           ./hosts/mainframe/default.nix
           chaotic.nixosModules.default
-          neovim-nightly-overlay.nixosModules.default
+
+          neovim-nightly-overlay.overlays.default
         ];
       };
     };
