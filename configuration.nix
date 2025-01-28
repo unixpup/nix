@@ -101,6 +101,7 @@
      gnome-keyring
      seahorse
      pavucontrol
+     luarocks
      pulseaudio
      man-pages
      man-pages-posix
