@@ -1,22 +1,24 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./boot.nix
-      ./system.nix
-      ./fonts.nix
-      ./networking.nix
-      ./sound.nix
-      ./energy.nix
-      ./ssh.nix
-      ./shell.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./boot.nix
+    ./system.nix
+    ./fonts.nix
+    ./networking.nix
+    ./sound.nix
+    ./energy.nix
+    ./ssh.nix
+    ./shell.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -28,12 +30,12 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
-     font = "Lat2-Terminus16";
-     useXkbConfig = true; # use xkb.options in tty.
+    font = "Lat2-Terminus16";
+    useXkbConfig = true; # use xkb.options in tty.
   };
 
   services.dbus = {
-  	implementation = "broker";
+    implementation = "broker";
   };
 
   # Enable the X11 windowing system.
@@ -41,24 +43,24 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver = {
-  	displayManager.gdm = { 
-  		enable = true;
-		wayland = true;
-	};
-  	desktopManager.gnome.enable = true;
-	updateDbusEnvironment = true;
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+    desktopManager.gnome.enable = true;
+    updateDbusEnvironment = true;
   };
 
   xdg = {
-  	portal = {
-		enable = true;
-		xdgOpenUsePortal = true;
-	};
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+    };
   };
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
-  
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -69,50 +71,51 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.unix = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-     packages = with pkgs; [
-       firefox
-       spotify
-       vesktop
-       fastfetch
-       btop-rocm
-       flatpak
-       gnome-software
-     ];
-     shell = pkgs.zsh;
+    isNormalUser = true;
+    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [
+      firefox
+      spotify
+      vesktop
+      fastfetch
+      btop-rocm
+      flatpak
+      gnome-software
+    ];
+    shell = pkgs.zsh;
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     alejandra
-     fzf
-     ffmpeg-full
-     neovim 
-     git
-     wget2
-     cmake
-     gnumake
-     ninja
-     meson
-     python313
-     obs-studio
-     libtool
-     gnome-keyring
-     seahorse
-     pavucontrol
-     luarocks
-     pulseaudio
-     man-pages
-     man-pages-posix
-     llvmPackages_19.libcxxClang
-     llvmPackages_19.clangUseLLVM
-     llvmPackages_19.clang-tools
-     llvmPackages_19.clang-manpages
-     llvmPackages_19.openmp
-     nodePackages_latest.nodejs
-     nodePackages_latest.pnpm
+    alejandra
+    pre-commit
+    fzf
+    ffmpeg-full
+    neovim
+    git
+    wget2
+    cmake
+    gnumake
+    ninja
+    meson
+    python313
+    obs-studio
+    libtool
+    gnome-keyring
+    seahorse
+    pavucontrol
+    luarocks
+    pulseaudio
+    man-pages
+    man-pages-posix
+    llvmPackages_19.libcxxClang
+    llvmPackages_19.clangUseLLVM
+    llvmPackages_19.clang-tools
+    llvmPackages_19.clang-manpages
+    llvmPackages_19.openmp
+    nodePackages_latest.nodejs
+    nodePackages_latest.pnpm
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -157,6 +160,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
-
