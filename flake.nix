@@ -10,6 +10,7 @@
   outputs = {
     nixpkgs,
     chaotic,
+    neovim-nightly-overlay,
     ...
   }: {
     nixosConfigurations = {
@@ -18,6 +19,11 @@
         modules = [
           ./hosts/mainframe/default.nix
           chaotic.nixosModules.default
+          {
+            nixpkgs.overlays = [
+              neovim-nightly-overlay.overlay
+            ];
+          }
         ];
       };
     };

@@ -15,7 +15,6 @@
     ./security.nix
     ./shell.nix
     ./docs.nix
-    ./neovim.nix
   ];
 
   networking.hostName = "mainframe";
@@ -106,6 +105,7 @@
     pre-commit
     fzf
     ffmpeg-full
+    neovim
     git
     wget2
     cmake
