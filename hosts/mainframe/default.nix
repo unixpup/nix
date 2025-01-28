@@ -109,6 +109,7 @@
     neovim
     git
     wget2
+    wget
     cmake
     gnumake
     ninja
