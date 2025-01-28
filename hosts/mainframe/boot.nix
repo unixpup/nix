@@ -38,6 +38,8 @@
     };
 
     kernelParams = [
+      "preempt=full"
+      "threadirqs"
       "default_hugepagesz=1G"
       "hugepagesz=1G"
       "slab_nomerge"
