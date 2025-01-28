@@ -9,7 +9,7 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ./hardware.nix
     ./boot.nix
     ./system.nix
     ./fonts.nix
@@ -19,6 +19,23 @@
     ./ssh.nix
     ./shell.nix
   ];
+
+  nix.gc = {
+    automatic = true;
+    options = "-d";
+  };
+
+  nix.optimise.automatic = true;
+
+  nix.settings = {
+    experimental-features = "cgroups dynamic-derivations flakes nix-command recursive-nix";
+    auto-optimise-store = true;
+    http-connections = 0;
+    download-buffer-size = 671088640;
+    max-jobs = "auto";
+    sync-before-registering = true;
+    use-cgroups = true;
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -60,9 +77,6 @@
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -117,25 +131,6 @@
     nodePackages_latest.nodejs
     nodePackages_latest.pnpm
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
