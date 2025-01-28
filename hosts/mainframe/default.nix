@@ -20,6 +20,8 @@
     ./shell.nix
   ];
 
+  networking.hostName = "mainframe";
+
   nix.gc = {
     automatic = true;
     options = "-d";

@@ -12,12 +12,14 @@
     chaotic,
     ...
   }: {
-    nixosConfigurations.mainframe = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/mainframe/default.nix
-        chaotic.nixosModules.default
-      ];
+    nixosConfigurations = {
+      mainframe = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/mainframe/default.nix
+          chaotic.nixosModules.default
+        ];
+      };
     };
   };
 }
