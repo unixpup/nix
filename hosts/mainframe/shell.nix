@@ -19,6 +19,7 @@
     shellAliases = {
       ll = "ls -l";
       update = "sudo nixos-rebuild switch --upgrade --upgrade-all";
+      wget = "wget2 --https-only ";
       nixdev = "cd $HOME/.config/nixos";
     };
 
