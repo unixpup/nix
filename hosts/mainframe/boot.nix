@@ -23,6 +23,11 @@
     };
   };
   boot = {
+    plymouth = {
+      enable = true;
+      theme = "tribar";
+    };
+
     kernelParams = [
       "default_hugepagesz=1G"
       "hugepagesz=1G"
@@ -42,6 +47,7 @@
     ];
     kernelPackages = pkgs.linuxPackages_cachyos;
     initrd = {
+      kernelModules = ["amdgpu" "sha256" "sha512" "crypto"];
       systemd = {
         enable = true;
         dbus = {
