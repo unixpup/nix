@@ -17,7 +17,7 @@
     ./sound.nix
     ./energy.nix
     ./ssh.nix
-    ./security
+    ./security.nix
     ./shell.nix
   ];
 
