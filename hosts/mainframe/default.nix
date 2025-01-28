@@ -124,11 +124,18 @@
     pulseaudio
     man-pages
     man-pages-posix
-    llvmPackages_19.libcxxClang
-    llvmPackages_19.clangUseLLVM
-    llvmPackages_19.clang-tools
-    llvmPackages_19.clang-manpages
-    llvmPackages_19.openmp
+    llvmPackages.libcxxClang
+    llvmPackages.compiler-rt
+    llvmPackages.bintools
+    llvmPackages.clangUseLLVM
+    llvmPackages.clang-tools
+    llvmPackages.clang-manpages
+    llvmPackages.openmp
+    llvmPackages.mlir
+    llvmPackages.lldb-manpages
+    llvmPackages.libunwind
+    llvmPackages.stdenv
+    llvmPackages.libcxxStdenv
     nodePackages_latest.nodejs
     nodePackages_latest.pnpm
   ];
