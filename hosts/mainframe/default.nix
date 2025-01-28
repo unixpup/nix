@@ -15,6 +15,7 @@
     ./security.nix
     ./shell.nix
     ./docs.nix
+    ./flatpak.nix
   ];
 
   networking.hostName = "mainframe";
@@ -89,7 +90,6 @@
       vesktop
       fastfetch
       btop-rocm
-      flatpak
       gnome-software
       alacritty
     ];
@@ -99,6 +99,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    ripgrep
+    fd
     unzip
     alejandra
     pre-commit
