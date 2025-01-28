@@ -21,7 +21,7 @@
           chaotic.nixosModules.default
           {
             nixpkgs.overlays = [
-              neovim-nightly-overlay.overlay
+              (import neovim-nightly-overlay)
             ];
           }
         ];
