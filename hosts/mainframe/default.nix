@@ -136,6 +136,7 @@
     llvmPackages.libunwind
     llvmPackages.stdenv
     llvmPackages.libcxxStdenv
+    lldb
     nodePackages_latest.nodejs
     nodePackages_latest.pnpm
   ];
