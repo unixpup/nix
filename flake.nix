@@ -4,12 +4,14 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = {
     self,
     nixpkgs,
     chaotic,
+    neovim-nightly-overlay,
     ...
   }: {
     nixosConfigurations = {
@@ -18,6 +20,7 @@
         modules = [
           ./hosts/mainframe/default.nix
           chaotic.nixosModules.default
+          neovim-nightly-overlay.nixosModules.default
         ];
       };
     };
