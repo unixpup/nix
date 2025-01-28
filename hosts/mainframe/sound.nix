@@ -23,7 +23,7 @@
       };
       "stream" = {
         "properties" = {
-          "node.latency" = "2048/192000";
+          "node.latency" = "512/48000";
           "node.autoconnect" = true;
           "resample.quality" = 14;
           "channelmix.normalize" = true;
@@ -92,8 +92,8 @@
         ];
         "core.daemon" = true;
         "core.name" = "pipewire-0";
-        "default.clock.rate" = 192000;
-        "default.clock.allowed-rates" = [192000];
+        "default.clock.rate" = 48000;
+        "default.clock.allowed-rates" = [48000];
         "module.x11.bell" = true;
         "module.access" = true;
         "module.jackdbus-detect" = true;
