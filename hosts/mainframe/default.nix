@@ -94,6 +94,7 @@
       btop-rocm
       flatpak
       gnome-software
+      alacritty
     ];
     shell = pkgs.zsh;
   };
