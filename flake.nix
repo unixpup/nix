@@ -21,7 +21,7 @@
           ./hosts/mainframe/default.nix
           chaotic.nixosModules.default
 
-          neovim-nightly-overlay.overlays.default
+          neovim-nightly-overlay.nixosModules.default
         ];
       };
     };
