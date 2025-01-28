@@ -19,6 +19,7 @@
     ./ssh.nix
     ./security.nix
     ./shell.nix
+    ./docs.nix
   ];
 
   networking.hostName = "mainframe";
