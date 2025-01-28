@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   hardware = {
     amdgpu = {
       initrd = {
@@ -16,6 +11,7 @@
     };
   };
   boot = {
+    kernelPackages = pkgs.linuxPackages_cachyos;
     initrd = {
       systemd = {
         enable = true;
