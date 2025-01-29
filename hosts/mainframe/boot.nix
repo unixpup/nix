@@ -38,10 +38,13 @@
     };
 
     kernelParams = [
+      "pci=check_enable_amd_mmconf,pcie_bus_perf,realloc,pcie_scan_all"
       "preempt=full"
       "threadirqs"
       "default_hugepagesz=1G"
       "hugepagesz=1G"
+      "transparent_hugepage=always"
+      "transparent_hugepage_shmem=always"
       "slab_nomerge"
       "init_on_alloc=1"
       "randomize_kstack_offset=on"
@@ -52,6 +55,12 @@
       "oops=panic"
       "module.sig_enforce=1"
       "mce=0"
+      "iomem=strict"
+      "iommu=force"
+      "iommu.strict=1"
+      "amd_iommu=force_isolation,force_enable,pgtbl_v2"
+      "enable_mtrr_cleanup"
+      "fred=on"
       "quiet"
       "splash"
       "loglevel=0"
