@@ -10,6 +10,7 @@
     ./fonts.nix
     ./networking.nix
     ./sound.nix
+    ./desktop.nix
     ./energy.nix
     ./ssh.nix
     ./security.nix
@@ -51,32 +52,6 @@
   services.dbus = {
     implementation = "broker";
   };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver = {
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
-    desktopManager.gnome.enable = true;
-    updateDbusEnvironment = true;
-  };
-
-  xdg = {
-    portal = {
-      enable = true;
-      xdgOpenUsePortal = true;
-    };
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "us";
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
