@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  programs = {
+    dconf = {
+      enable = true;
+    };
+  };
   # Enable the GNOME Desktop Environment.
   services = {
     libinput = {
