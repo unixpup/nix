@@ -26,7 +26,7 @@
   boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/264ec296-8f89-44df-a7e2-c25877a107ea";
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/CD0C-836E";
+    device = "/dev/disk/by-uuid/B435-9733";
     fsType = "vfat";
     options = ["fmask=0077" "dmask=0077"];
   };
@@ -34,7 +34,6 @@
   swapDevices = [
     {
       device = "/dev/disk/by-partuuid/6a66a5e4-78b6-448b-8dc4-0c198b86e215";
-      randomEncryption.enable = true;
       options = ["pri=50"];
     }
   ];
