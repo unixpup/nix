@@ -24,6 +24,7 @@
     nftables = {
       enable = true;
     };
+    tempAddresses = "default";
   };
 
   services.resolved = {
