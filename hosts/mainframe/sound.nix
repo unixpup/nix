@@ -12,7 +12,6 @@
     };
     alsa = {
       enable = true;
-      support32Bit = true;
     };
     extraConfig.client.quality = {
       "context.properties" = {
@@ -22,7 +21,7 @@
       };
       "stream" = {
         "properties" = {
-          "node.latency" = "128/48000";
+          "node.latency" = "256/48000";
           "node.autoconnect" = true;
           "resample.quality" = 14;
           "channelmix.normalize" = true;
@@ -93,9 +92,9 @@
         "core.name" = "pipewire-0";
         "default.clock.rate" = 48000;
         "default.clock.allowed-rates" = [48000];
-        "default.clock.quantum" = 32;
-        "default.clock.min-quantum" = 32;
-        "default.clock.max-quantum" = 32;
+        "default.clock.quantum" = 64;
+        "default.clock.min-quantum" = 64;
+        "default.clock.max-quantum" = 64;
         "module.x11.bell" = true;
         "module.access" = true;
         "module.jackdbus-detect" = true;
