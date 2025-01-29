@@ -17,6 +17,7 @@
     ./shell.nix
     ./docs.nix
     ./flatpak.nix
+    ./sysctl.nix
   ];
 
   networking.hostName = "mainframe";
