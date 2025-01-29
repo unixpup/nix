@@ -38,7 +38,6 @@
     };
 
     kernelParams = [
-      "pci=check_enable_amd_mmconf,pcie_bus_perf,realloc,pcie_scan_all"
       "preempt=full"
       "threadirqs"
       "default_hugepagesz=1G"
@@ -58,9 +57,6 @@
       "iomem=strict"
       "iommu=force"
       "iommu.strict=1"
-      "amd_iommu=force_isolation,force_enable,pgtbl_v2"
-      "enable_mtrr_cleanup"
-      "fred=on"
       "quiet"
       "splash"
       "loglevel=0"
