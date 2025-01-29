@@ -19,6 +19,26 @@
         };
       };
       updateDbusEnvironment = true;
+      gnome = {
+        gnome-settings-daemon = {
+          enable = true;
+        };
+        gnome-keyring = {
+          enable = true;
+        };
+        glib-networking = {
+          enable = true;
+        };
+        core-utilities = {
+          enable = true;
+        };
+        core-shell = {
+          enable = true;
+        };
+        core-os-services = {
+          enable = true;
+        };
+      };
     };
 
     xdg = {
